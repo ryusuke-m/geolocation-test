@@ -87,7 +87,7 @@ let target;
 
 function success(pos) {
   const crd = pos.coords;
-
+    console.log("get current position"+pos.timestamp)
   if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
     console.log("Congratulations, you reached the target");
     navigator.geolocation.clearWatch(id);
