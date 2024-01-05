@@ -1,10 +1,10 @@
 let id;
 let target;
 let options;
+let prevTimestamp;
 
 function success(position) {
 //   const crd = position.coords;
-    console.log("get current position"+position.timestamp)
     document.getElementById("lat").innerHTML =  position.coords.latitude;
     document.getElementById("long").innerHTML =  position.coords.longitude;
     document.getElementById("acc").innerHTML =  position.coords.accuracy;
@@ -13,7 +13,9 @@ function success(position) {
     document.getElementById("heading").innerHTML =  position.coords.heading;
     document.getElementById("speed").innerHTML = position.coords.speed;
     document.getElementById("timestamp").innerHTML =  position.timestamp;
+    document.getElementById("deltatime").innerHTML = position.timestamp-prevTimestamp;
     console.log(position)
+    prevTimestamp=position.timestamp;
 }
 
 function error(err) {
