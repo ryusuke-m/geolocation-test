@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Get Location Data</title>
 
+   
+    <title>Get Location Data</title>
     <style>
     .output{
         margin-left: 10px;
@@ -21,25 +20,40 @@
         margin: 0px 15px 0px 15px;
         font-size: 17px;
     }
+    table{
+        font-size: x-large;
+    }
+    button{
+        font-size: x-large;
+    }
+    h1{
+        font-size: xx-large;
+    }
     </style>
-
 </head>
 
 <body>
-    <p class='output'>Click the button to get your coordinates.</p>
-
+    <h1>Click the button to get your coordinates.</h1>
+    <button id="button_start" onclick="onClickStartButton()">Start</button>
+    <button id="button_start" onclick="onClickStopButton">Stop</button>
 
     <p id="demo"></p>
+    <table>
+        <tr><th>項目</th><th>値(空欄はNull)</th></tr>
+        <tr><td>Latitude(緯度)/deg: </td>   <td> <span id="lat"></span></td></tr>
+        <tr><td>Longitude(経度)/deg: </td>  <td><span id="long"></span></td></tr>
+        <tr><td>Latitude(緯度)/deg: </td>   <td> <span id="lat"></span></td></tr>
+        <tr><td>Altitude(標高)/m: </td>      <td><span id="alti"></span></td></tr>
+        <tr><td>Accuracy(精度)/m: </td>     <td><span id="acc">  </span></td></tr>
+        <tr><td>Altitude Accuracy(標高の精度)/m: </td>  <td><span id="altiAcc"></span></td></tr>
+        <tr><td>Heading(北を0，時計回りで端末の向き)/deg: </td>  <td></td><span id="heading"></span></td></tr>
+        <tr><td>Speed(移動速度)/m/s: </td>  <td><span id="speed"></span></td></tr>
+        <tr><td>Timestamp(タイムスタンプ)/ms: </td>  <td><span id="timestamp"></span></td></tr>
+        <tr><td><s>前回の取得から/ms: </s></td>  <td><span id="deltatime"></span></td></tr>
+    </table>
 
     <div class="output">
-        <div id="lat"></div>
-        <div id="lng"></div>
-        <div id="acc"></div>
-        <div id="alt"></div>
-        <div id="altAcc"></div>
-        <div id="heading"></div>
-        <div id="speed"></div>
-        <div id="timestamp"></div>
+        
     </div>
 
 <script src="script.js"></script>
